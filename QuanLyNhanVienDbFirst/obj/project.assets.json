@@ -9794,11 +9794,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
+      "projectUniqueName": "C:\\DemoGit\\demoGit2\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
       "projectName": "QuanLyNhanVienDbFirst",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
+      "projectPath": "C:\\DemoGit\\demoGit2\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst\\obj\\",
+      "outputPath": "C:\\DemoGit\\demoGit2\\QuanLyNhanVienDbFirst\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

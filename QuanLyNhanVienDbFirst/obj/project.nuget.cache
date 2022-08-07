@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tGkbvaoYRbIYLroO+xmw80emB5zb0YxURkQqTbAkr3C3tZ2yV5RLIXc36MICSxSSFH3lqs/YoSimcdWi3ak5dw==",
+  "dgSpecHash": "wWzf3XHuyevufvTZ+3DWNOBFOtHSb8AZGMaBJzyEdZDdvw19ioHt9RirV1yi/WWwWgdEHWjT3RmwEtrpJbQNrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
+  "projectFilePath": "C:\\DemoGit\\demoGit2\\QuanLyNhanVienDbFirst\\QuanLyNhanVienDbFirst.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
