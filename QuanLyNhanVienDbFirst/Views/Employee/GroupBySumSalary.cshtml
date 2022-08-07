@@ -1,0 +1,64 @@
+﻿@model IEnumerable<QuanLyNhanVienDbFirst.Models.EmployeeDTO>
+
+@{
+    ViewData["Title"] = "GroupBySumSalary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GroupBySumSalary</h1>
+
+COunt: @ViewBag.employee
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SumSalary)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+@if(Model != null)
+    {
+        <tbody>
+       
+            @foreach(var i in Model)
+            {
+                <tr>
+                    
+                    <td>
+                        @i.Name
+                    </td>
+                    <td>
+                        @i.Quantity
+                    </td>
+                    <td>
+                        @i.SumSalary
+                    </td>
+                    
+                </tr>   
+            }
+            
+            @*<br>
+            Tổng lương: @ViewBag.employee.Salary*@
+        </tbody>
+    }
+    else
+    {
+        <tbody>
+            <tr>
+                <td>Không có dữ liệu</td>
+            </tr>
+        </tbody>
+    }
+    
+</table>

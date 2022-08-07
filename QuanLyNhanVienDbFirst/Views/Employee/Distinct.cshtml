@@ -1,0 +1,72 @@
+﻿@model IEnumerable<QuanLyNhanVienDbFirst.Models.Employee>
+
+@{
+    ViewData["Title"] = "Distinct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Distinct</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>*@
+           @* <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+@if(Model != null)
+    {
+        <tbody>
+       
+            @foreach(var i in Model)
+            {
+                <tr>
+                    <td>
+                        @i.Id
+                    </td>
+                    <td>
+                        @i.Name
+                    </td>
+                    
+                </tr>   
+            }
+           
+
+        </tbody>
+    }
+    else
+    {
+        <tbody>
+            <tr>
+                <td>Không có dữ liệu</td>
+            </tr>
+        </tbody>
+    }
+    
+</table>

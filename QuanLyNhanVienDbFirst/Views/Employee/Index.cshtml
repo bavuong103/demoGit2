@@ -1,0 +1,178 @@
+﻿@using Microsoft.AspNetCore.Http;
+@*thu vien Session*@
+@inject IHttpContextAccessor httpContextAccessor;
+
+@model IEnumerable<QuanLyNhanVienDbFirst.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<div class="row justify-content-md-start">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Wellcome
+            </div>
+            <div class="card-body">
+             @*khoi tao Session*@
+
+             @{
+                var session = @httpContextAccessor.HttpContext.Session;
+
+                if (session != null)
+                {
+                    <p>Name: @session.GetString("Name")</p>
+                    <p>UserName: @session.GetString("UserName")</p>
+                    <a href="@Url.Action("Logout","Employee")" class="btn btn-warning">Logout</a>
+                }
+             }
+              
+             
+            </div>
+        </div>
+         
+    </div>
+</div>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>
+    <a asp-action="GroupBy">Group By</a>
+</p>
+<p>
+    <a asp-action="Distinct">Distinct</a>
+</p>
+<p>
+    <a asp-action="GroupBySumSalary">Group By Sum Salary</a>
+</p>
+<p>
+    <a asp-action="DistinctSumSalary">Distinct Sum Salary</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.NameDepartment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<ul class="pagination">
+    @{
+        int numberPage = ViewBag.numberPage;
+        int pageCurrent = ViewBag.pageCurrent;
+        
+        //int offset = 2;//number display page
+
+
+        //config FirstLink
+        if (pageCurrent > 1)
+        {
+            int firstPage = 1;
+            var FirstLink = new Dictionary<string, string>{ { "page", firstPage.ToString() } };
+                    <li><a asp-controller="Employee" asp-action="Index" asp-all-route-data="FirstLink">  First Page |</a></li>
+
+            int prevPage = pageCurrent - 1;
+            var PrevLink = new Dictionary<string, string> { { "page", prevPage.ToString() } };
+                    <li><a asp-controller="Employee" asp-action="Index" asp-all-route-data="PrevLink"> Prev Page | </a></li>
+        }
+
+                
+            int i;
+            for (i = 1; i <= numberPage; i++)
+            {
+                    var parms = new Dictionary<string, string>
+                    {
+                        { "page",i.ToString()}
+                    };
+                    if (pageCurrent == i)
+                    {
+                                    <li class="active"><a asp-controller="Employee" asp-action="Index" asp-all-route-data="parms"><p style="color:red">@i</p></a></li>
+                    }
+                    else
+                    {
+                                    <li><a asp-controller="Employee" asp-action="Index" asp-all-route-data="parms">@i</a></li>
+                    }
+ 
+            }
+              
+ 
+        if (pageCurrent < numberPage)
+        {
+            int nextPage = pageCurrent + 1;
+            var NextLink = new Dictionary<string, string> { { "page", nextPage.ToString() } };
+                    <li><a asp-controller="Employee" asp-action="Index" asp-all-route-data="NextLink"> | Next Page</a></li>
+
+            var LastLink = new Dictionary<string, string> { { "page", numberPage.ToString() } };
+                    <li><a asp-controller="Employee" asp-action="Index" asp-all-route-data="LastLink"> | Last Page</a></li>
+        }
+
+
+    }
+</ul>
+
