@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession(cfg => { 
-    cfg.Cookie.Name = "huySession113";             
+    cfg.Cookie.Name = "huySession116666";             
     cfg.IdleTimeout = new TimeSpan(0, 60, 0);
 });
 
